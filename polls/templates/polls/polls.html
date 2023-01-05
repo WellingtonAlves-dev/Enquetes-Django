@@ -1,0 +1,15 @@
+{% extends "global/base.html" %}
+
+{% block "content" %}
+<div class='container mt-5'>
+    <div class="row">
+        {% for poll in polls %}
+            <div class="col-lg-4">
+                {% include 'polls/partials/card.html' %}
+            </div>
+        {% empty %}
+            <h1>Nenhuma enquete registrada</h1>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

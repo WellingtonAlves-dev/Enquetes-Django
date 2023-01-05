@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+    {% if poll.cover %}
+        <img src="{{poll.cover.url}}" style="height: 250px;" class="card-img-top" alt="...">
+    {% endif %}
+    <div class="card-body">
+      <h5 class="card-title">{{ poll.title | title | slice:"0:25" }}...</h5>
+      <p class="card-text">
+        {{ poll.description.html | striptags |slice:"0:30" }}...
+      </p>
+      <a href="{% url "polls:poll" poll.id %}" class="btn btn-dark">Visualizar enquete</a>
+    </div>
+  </div>     
